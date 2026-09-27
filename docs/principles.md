@@ -166,6 +166,21 @@ The harness should provide reusable practices and templates. Product repositorie
 - Real acceptance tests
 - Sensitive or private context
 
+## Keep Sensitive Access Behind Product Code
+
+Agents should not receive broad, direct access to user accounts, production credentials, private inboxes, or other sensitive external systems when product code can mediate the task.
+
+Prefer product-owned services that:
+
+- Authenticate with external systems.
+- Select the minimum necessary records.
+- Normalize data into bounded fixtures or payloads.
+- Redact or omit unnecessary sensitive fields.
+- Hand scoped content to AI for analysis.
+- Apply deterministic validation before writes or side effects.
+
+This keeps agentic analysis useful while preserving normal application security boundaries.
+
 ## Improvement Loop
 
 When an agent or human repeats a mistake, update the harness:
