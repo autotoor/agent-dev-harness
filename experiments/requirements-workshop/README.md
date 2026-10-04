@@ -27,3 +27,4 @@ Git history should preserve the exact prompt and the evidence that motivated eac
 
 - [`v0-prompt.md`](./v0-prompt.md): deliberately simple, untested starting prompt.
 - [`trial-notes-template.md`](./trial-notes-template.md): public-safe structure for recording what a trial taught us.
+- [`v0-trial-notes.md`](./v0-trial-notes.md): observations from the first product workshop and its output review.

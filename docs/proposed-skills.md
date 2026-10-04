@@ -44,3 +44,26 @@ Extraction criteria:
 - Define how the skill resumes without repeating settled questions.
 - Define compact handoffs for any panel work delegated to subagents.
 - Add a small fixture set that demonstrates incomplete, contradictory, and specification-ready requirements.
+
+## Requirements Consistency Review
+
+Proposed skill name: `requirements-consistency-review`
+
+Purpose: inspect requirements and related documents for contradictions, harmful duplication, missing behavior, and drift from authoritative product decisions. This is a reusable bounded review that the requirements workshop may invoke during its review phase.
+
+Trigger: a requirements milestone, a substantial requirements revision, or preparation for formal specification.
+
+Candidate workflow:
+
+1. Identify the baseline, authoritative decisions, document roles, and release boundary.
+2. Compare requirements with acceptance criteria, schemas, workflows, overview, and agent entry-point guidance.
+3. Distinguish contradictions, known unresolved gaps, unspecified lifecycle behavior, and intentional repetition.
+4. Test interactions with a small number of synthetic boundary scenarios.
+5. Return prioritized findings with paired evidence, consequence, confidence, and a concrete question or correction.
+6. Preserve accepted decisions; propose product choices for human resolution.
+
+Review dimensions include actor permissions, child/category cardinality, date uncertainty, state transitions, failure behavior, source-rule changes, and evidence/retention boundaries. Adapt these dimensions to the product rather than requiring email-specific concepts everywhere.
+
+Outputs: a concise review record, scenario candidates, and proposed reconciliation actions. Treat acknowledged schema proposals as incomplete contracts rather than implementation bugs. Do not equate document length with quality or automatically remove repeated acceptance criteria.
+
+Development status: the first manual trial is recorded in `experiments/requirements-workshop/v0-trial-notes.md`. Before packaging the skill, test the rubric against synthetic consistent, contradictory, and deliberately incomplete document sets. Deterministic link and formatting checks should remain scripts; agents should handle semantic comparison.
