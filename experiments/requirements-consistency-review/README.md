@@ -13,6 +13,8 @@ This experiment develops a bounded semantic review before extracting the propose
 - [evaluation 002](./evaluations/002/README.md): an unstated lifecycle interaction and internally consistent documents that drift from human-approved direction; see its run record for status.
 - [evaluation 003](./evaluations/003/README.md): bounded repeated comparison of V0/V1 on fixed development cases and a consistent control; see its run record for results.
 - [evaluation 004](./evaluations/004/README.md): unchanged V1 on a sharper request control and a newly authored lending case/control; see its run record for status.
+- [prioritization-test-plan.md](./prioritization-test-plan.md): six-response classification test, separate from discovery; setup approved for a preparation checkpoint, not executed.
+- [evaluation 005](./evaluations/005/README.md): three document/finding bundles, prioritization-v0, rubric, dispatch specification, and approved preparation hashes; awaiting separate execution approval.
 
 Keep product decisions, review records, and domain-specific scenarios in the product repository. This experiment owns generic instructions and evaluation observations only.
 

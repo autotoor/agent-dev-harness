@@ -15,3 +15,7 @@ The lending case was not used while creating V1. It is an unfamiliar synthetic t
 ## Bound
 
 Run V1 twice on each of three cases: six fresh read-only reviewers. Use the unchanged wrapper from evaluation 003, no tools, no parent history, no answer key, and no coaching. Freeze [rubric](./rubric.md) and inputs before dispatch. Stop after six responses, assess control findings, and record results in [run record](./run-record.md). Do not repair fixtures during the run or tune another prompt automatically.
+
+## Post-Run Assessment
+
+The [additional-question assessment](./finding-assessment.md) separates access decisions, wording/UI clarifications, and compound display findings. It is a later parent assessment, not independent validation or a revised answer key. Frozen inputs, scores, raw responses, and V1 are unchanged. Review the classifications before designing any new prioritization test.

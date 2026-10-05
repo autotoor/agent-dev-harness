@@ -1,8 +1,10 @@
 # Review And Conversation Evaluation Plan
 
-Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) informed the [V0/V1 comparison](./evaluations/003/run-record.md). The [unchanged-V1 follow-up](./evaluations/004/run-record.md) now tests sharper controls and unfamiliar lending content. Target detection is promising; specificity remains inconclusive because controls contain plausible unseeded omissions. Independent assessment of those questions is next, not automatic V2 tuning. Interactive replay and skill packaging are still pending.
+Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) informed the [V0/V1 comparison](./evaluations/003/run-record.md). The [unchanged-V1 follow-up](./evaluations/004/run-record.md) tests sharper controls and unfamiliar lending content. A [post-run parent assessment](./evaluations/004/finding-assessment.md) now distinguishes implementation blockers from useful clarifications and splits the loan-display finding. Target detection is promising; specificity remains inconclusive. Human confirmation of these classifications and a bounded prioritization-test plan are proposed next, not automatic V2 tuning. Independent grading, interactive replay, and skill packaging remain pending.
 
 ## Goal
+
+Next proposed bounded work is the [prioritization test](./prioritization-test-plan.md). Owner approved the prepared setup and commit/push checkpoint. [Evaluation 005](./evaluations/005/README.md) has three bundles, rubric, standalone prioritization-v0, dispatch specification, and unchanged approved preparation hashes. The test isolates classification of supplied findings; it is not a V1 rerun or a V2 revision. Separate execution approval and hash reverification are required before any runs.
 
 Test whether reusable instructions help produce coherent, consistent requirements with less backtracking. Treat speed and quality improvements as hypotheses until measured.
 
