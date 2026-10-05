@@ -5,11 +5,13 @@ This experiment develops a bounded semantic review before extracting the propose
 ## Artifacts
 
 - [v0-prompt.md](./v0-prompt.md): initial reusable prompt, unchanged; exercised with a controlled wrapper in evaluation 001.
+- [v1-prompt.md](./v1-prompt.md): candidate addition about unspecified user-visible boundary outcomes; evaluated separately from V0.
 - [manual-trial-notes.md](./manual-trial-notes.md): evidence from the manual reviews that motivated the prompt, not results from running it.
 - [evaluation-plan.md](./evaluation-plan.md): agreed plan; the first small read-only test is complete, while simulated-owner replay remains pending.
 - [improvement-loop.md](./improvement-loop.md): iteration records, comparisons, stopping rules, and commit/tag checkpoints.
 - [evaluation 001](./evaluations/001/README.md): small synthetic review cases and evaluator-only rubric; see its run record for execution status.
 - [evaluation 002](./evaluations/002/README.md): an unstated lifecycle interaction and internally consistent documents that drift from human-approved direction; see its run record for status.
+- [evaluation 003](./evaluations/003/README.md): bounded repeated comparison of V0/V1 on fixed development cases and a consistent control; see its run record for results.
 
 Keep product decisions, review records, and domain-specific scenarios in the product repository. This experiment owns generic instructions and evaluation observations only.
 

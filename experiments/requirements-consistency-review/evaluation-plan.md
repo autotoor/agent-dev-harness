@@ -1,6 +1,6 @@
 # Review And Conversation Evaluation Plan
 
-Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) have each completed two small read-only subagent runs; interactive replay is still pending. No skill is packaged. Evaluation 002 exposes a candidate prompt improvement that remains untested.
+Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) informed the bounded [V0/V1 comparison](./evaluations/003/run-record.md), now complete with twelve responses. V1 is promising on the target gap; specificity remains inconclusive because the consistent control has unseeded omissions. Interactive replay and skill packaging are still pending.
 
 ## Goal
 
