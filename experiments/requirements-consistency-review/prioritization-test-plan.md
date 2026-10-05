@@ -2,6 +2,8 @@
 
 Status: setup approved for preservation, 2026-10-04. Owner selected approval and commit/push of the preparation checkpoint. [Evaluation 005](./evaluations/005/README.md) contains three bundles, evaluator-only rubric, exact dispatch specification, and unchanged hashes adopted as the approved preparation baseline. Separate execution approval remains required; no runs are authorized by this plan alone.
 
+Execution addendum, 2026-10-04: owner separately approved execution after preservation. The six-response batch is complete; see its [run record](./evaluations/005/run-record.md). All fourteen scored units matched the parent-authored rubric. The plan below preserves the pre-run design, not authority for more runs. Prompt and inputs remain unchanged, with no integration into V1.
+
 ## Question
 
 Can an agent distinguish a decision needed before implementing a particular behavior from useful clarification and unsupported scope expansion?

@@ -4,7 +4,7 @@ Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-re
 
 ## Goal
 
-Next proposed bounded work is the [prioritization test](./prioritization-test-plan.md). Owner approved the prepared setup and commit/push checkpoint. [Evaluation 005](./evaluations/005/README.md) has three bundles, rubric, standalone prioritization-v0, dispatch specification, and unchanged approved preparation hashes. The test isolates classification of supplied findings; it is not a V1 rerun or a V2 revision. Separate execution approval and hash reverification are required before any runs.
+The separate [prioritization test](./prioritization-test-plan.md) was approved and executed after its preparation checkpoint. [Evaluation 005](./evaluations/005/run-record.md) records six responses; all fourteen scored units matched category, evidence, and scoped action. This isolates classification of supplied findings, not discovery improvement or independent validation. The batch is stopped with both prompts unchanged; review evidence before proposing broader cases or a separately versioned discovery comparison.
 
 Test whether reusable instructions help produce coherent, consistent requirements with less backtracking. Treat speed and quality improvements as hypotheses until measured.
 

@@ -1,6 +1,6 @@
 # Evaluation 005: Prioritizing Supplied Findings
 
-Prepared and setup approved: 2026-10-04. Owner selected approval plus commit/push of the preparation checkpoint. Status: setup frozen for preservation; awaiting separate execution approval. No runs or results.
+Prepared, setup approved, and executed: 2026-10-04. Owner approved preservation, then separately selected the six-response test. Status: six responses complete and parent-scored; stopped at the bound. See [run record](./run-record.md) and [metadata](./run-metadata.json). Owner subsequently approved commit/tag/push of the results as `requirements-prioritization-v0-evaluated`; verify live Git/remote state for publication.
 
 ## Review This Setup
 
@@ -17,6 +17,6 @@ These are new development cases, not external validation. The parent authored th
 
 ## Execution Gate
 
-Owner approved preserving this setup as `requirements-prioritization-v0-prepared`. The checkpoint includes the assessment and plan; its name records preparation, not evaluation success. Original hashes remain unchanged. Recheck live Git/remote state for checkpoint publication. Obtain separate authorization to run the six classifiers; approval to prepare and preserve files is not execution approval. No run has been performed.
+Owner approved preserving this setup as `requirements-prioritization-v0-prepared`, then approved execution separately. The preparation tag stays unchanged. All 12 preparation hashes were reverified before dispatch, alongside 51 historical hashes. Exact dispatches and raw responses are now preserved; no more runs or revisions are authorized by this completed batch.
 
 Run two fresh, no-history classifiers per case. Use the same prompt and wrapper, but each classifier sees only its own three documents. No tools or coaching; instruction-level isolation is not a security boundary. Record exact dispatches, inherited settings when available, all raw responses, scores by finding, and any protocol departure. Stop after six even if the outcome is mixed. Do not alter tests or create another prompt revision during execution.
