@@ -18,6 +18,7 @@ The harness is intentionally generic. Product-specific fixtures, domain rules, a
 - [docs/repository-contract.md](./docs/repository-contract.md): how a project repo can adopt the harness.
 - [docs/proposed-skills.md](./docs/proposed-skills.md): reusable agentic workflows being evaluated before extraction into skills.
 - [experiments/requirements-workshop](./experiments/requirements-workshop): versioned prompts and trial guidance for developing the proposed requirements workshop skill.
+- [experiments/requirements-consistency-review](./experiments/requirements-consistency-review): initial bounded review prompt and evidence from manual reconciliation reviews; standalone prompt trials are still pending.
 - [templates/task-contract.md](./templates/task-contract.md): reusable task framing template.
 - [templates/architecture-decision.md](./templates/architecture-decision.md): lightweight ADR template.
 - [templates/project-handoff.md](./templates/project-handoff.md): context handoff template.
