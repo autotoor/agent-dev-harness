@@ -1,6 +1,6 @@
 # Review And Conversation Evaluation Plan
 
-Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) informed the bounded [V0/V1 comparison](./evaluations/003/run-record.md), now complete with twelve responses. V1 is promising on the target gap; specificity remains inconclusive because the consistent control has unseeded omissions. Interactive replay and skill packaging are still pending.
+Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) informed the [V0/V1 comparison](./evaluations/003/run-record.md). The [unchanged-V1 follow-up](./evaluations/004/run-record.md) now tests sharper controls and unfamiliar lending content. Target detection is promising; specificity remains inconclusive because controls contain plausible unseeded omissions. Independent assessment of those questions is next, not automatic V2 tuning. Interactive replay and skill packaging are still pending.
 
 ## Goal
 

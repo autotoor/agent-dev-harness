@@ -22,6 +22,8 @@ Desired result: actionable recognition of the unstated lifecycle gap, preserved 
 
 ## Commits And Tags
 
+Increment prompt versions for material instruction changes that are tested. Repeated runs keep the same prompt version; fixture-only changes receive a new evaluation number. Do not reserve a version number for a final good result or rename failed candidates away. A selected candidate can receive a descriptive milestone tag independently of its prompt version.
+
 1. Commit completed V0 evaluations and tag the baseline `requirements-consistency-review-v0-evaluated`. Keep `requirements-consistency-review-v0` unchanged.
 2. Save new instructions under a new prompt version. Identify runs with file hashes even before their iteration is committed.
 3. Commit the prompt change, frozen comparison setup, raw responses, scoring, and conclusion as a coherent iteration. Do not erase an unsuccessful revision.

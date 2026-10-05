@@ -12,6 +12,7 @@ This experiment develops a bounded semantic review before extracting the propose
 - [evaluation 001](./evaluations/001/README.md): small synthetic review cases and evaluator-only rubric; see its run record for execution status.
 - [evaluation 002](./evaluations/002/README.md): an unstated lifecycle interaction and internally consistent documents that drift from human-approved direction; see its run record for status.
 - [evaluation 003](./evaluations/003/README.md): bounded repeated comparison of V0/V1 on fixed development cases and a consistent control; see its run record for results.
+- [evaluation 004](./evaluations/004/README.md): unchanged V1 on a sharper request control and a newly authored lending case/control; see its run record for status.
 
 Keep product decisions, review records, and domain-specific scenarios in the product repository. This experiment owns generic instructions and evaluation observations only.
 

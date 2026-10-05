@@ -1,0 +1,43 @@
+{
+  "domain": "Community tool lending",
+  "seededDocuments": {
+    "requirements.md": "# Requirements\nMembers reserve one available tool for pickup within 24 hours. Members see reservation status, pickup deadline, and cancellation reason when present. Confirmed reservations exclusively hold their tool.\n\nStaff may suspend or reinstate members. Suspended members cannot create reservations or check out tools. Existing loans keep their due dates; suspended members may return tools.\n\nReservation creation, checkout, cancellation, expiration, and return update the member view immediately after commit. Email notifications are outside this release.",
+    "workflow.md": "# Workflow\nAn active member reserves an available tool, creating a confirmed reservation. The member may cancel their own confirmed reservation. Staff may check it out only for an active member before its pickup deadline, creating a loan due seven days later.\n\nAt the pickup deadline, a confirmed reservation expires. Canceled and expired reservations release the tool; checkout converts its hold into a loan. Staff record returns, closing the loan and making the tool available.\n\nStaff may suspend or reinstate a member at any time. Reinstatement restores permission to reserve and check out.\n\nRejected actions change nothing and show a reason. Failed writes roll back and show a retry message.",
+    "model.md": "# Model\nMember: active or suspended.\nReservation: confirmed, canceled, expired, or checked_out; includes member, tool, pickup_deadline, and optional cancellation_reason. Canceled, expired, and checked_out are terminal.\nLoan: outstanding or returned; includes member, tool, due_at, and returned_at. Overdue is derived from outstanding and now >= due_at; it does not block returns.\n\nAll timestamps use server UTC. Actions are serialized and evaluated at commit time. Before evaluating any action or rendering a view, confirmed reservations whose deadlines have arrived expire. Checkout requires now < pickup_deadline.\n\nA tool may have at most one confirmed reservation or outstanding loan.",
+    "owner-decisions.md": "# Owner Decisions\nOnly staff change membership status, perform checkout, or record returns. Members see only their own records; staff see all records. Only members cancel their own confirmed reservations through the ordinary cancellation action.\n\nNo fees, renewals, or staff reservation overrides in this release. Waitlists are intentionally deferred.\n\nOpen implementation choice: use database locking or compare-and-swap to enforce serialized transitions. Either must preserve atomic writes and exclusive tool allocation."
+  },
+  "controlDocuments": {
+    "requirements.md": "# Requirements\nMembers reserve one available tool for pickup within 24 hours. Members see reservation status, pickup deadline, and cancellation reason when present. Confirmed reservations exclusively hold their tool.\n\nStaff may suspend or reinstate members. Suspended members cannot create reservations or check out tools. Existing loans keep their due dates; suspended members may return tools.\n\nReservation creation, checkout, cancellation, expiration, and return update the member view immediately after commit. Email notifications are outside this release.",
+    "workflow.md": "# Workflow\nAn active member reserves an available tool, creating a confirmed reservation. The member may cancel their own confirmed reservation. Staff may check it out only for an active member before its pickup deadline, creating a loan due seven days later.\n\nAt the pickup deadline, a confirmed reservation expires. Canceled and expired reservations release the tool; checkout converts its hold into a loan. Staff record returns, closing the loan and making the tool available.\n\nStaff may suspend or reinstate a member at any time. Suspension atomically cancels that member's remaining confirmed reservations with cancellation_reason `account_suspended`, releasing their tools. Reinstatement restores permission to reserve and check out.\n\nRejected actions change nothing and show a reason. Failed writes roll back and show a retry message.",
+    "model.md": "# Model\nMember: active or suspended.\nReservation: confirmed, canceled, expired, or checked_out; includes member, tool, pickup_deadline, and optional cancellation_reason. Canceled, expired, and checked_out are terminal.\nLoan: outstanding or returned; includes member, tool, due_at, and returned_at. Overdue is derived from outstanding and now >= due_at; it does not block returns.\n\nAll timestamps use server UTC. Actions are serialized and evaluated at commit time. Before evaluating any action or rendering a view, confirmed reservations whose deadlines have arrived expire. Checkout requires now < pickup_deadline.\n\nA tool may have at most one confirmed reservation or outstanding loan.",
+    "owner-decisions.md": "# Owner Decisions\nOnly staff change membership status, perform checkout, or record returns. Members see only their own records; staff see all records. Only members cancel their own confirmed reservations through the ordinary cancellation action.\n\nNo fees, renewals, or staff reservation overrides in this release. Waitlists are intentionally deferred.\n\nOpen implementation choice: use database locking or compare-and-swap to enforce serialized transitions. Either must preserve atomic writes and exclusive tool allocation."
+  },
+  "expectedFinding": {
+    "id": "suspension-confirmed-reservation-lifecycle",
+    "evidence": [
+      {
+        "document": "requirements.md",
+        "clause": "Confirmed reservations exclusively hold their tool; suspended members cannot check out tools."
+      },
+      {
+        "document": "workflow.md",
+        "clause": "Staff may suspend members at any time, while cancellation and expiration release reservation holds."
+      },
+      {
+        "document": "model.md",
+        "clause": "Reservation status and membership status are separate; terminal reservation states cannot be restored."
+      }
+    ],
+    "boundaryScenario": "An active member has a confirmed reservation with 12 hours remaining. Staff suspend the member before checkout. The member opens their reservation view, and another active member attempts to reserve the same tool.",
+    "supportedOutcomes": [
+      "The suspended member cannot create another reservation or check out this tool.",
+      "Any existing outstanding loan retains its due date and can be returned.",
+      "If the reservation becomes canceled, its tool is released and the member sees the cancellation reason.",
+      "If the reservation remains confirmed, its hold persists until cancellation or expiration."
+    ],
+    "unspecifiedOutcome": "The seeded documents do not determine whether suspension preserves or terminates an existing confirmed reservation, so its displayed status and the tool's availability after suspension are unspecified.",
+    "appropriateOwnerQuestion": "When a member is suspended before pickup, should their confirmed reservations remain held until their deadlines, or be canceled immediately and release the tools?",
+    "controlResolution": "The control adds one workflow clause: suspension atomically cancels remaining confirmed reservations with reason account_suspended. Existing expiration precedence handles reservations already at their deadlines; terminal states prevent reinstatement from reviving canceled reservations."
+  },
+  "limitations": "This fixture specifies observable state and allocation behavior, not exact interface wording or transport-error recovery. The seeded case's reinstatement consequences for prior confirmed reservations depend on the same missing suspension rule. Waitlists and concurrency mechanism selection are deliberately outside the finding. No reviewer execution or grading is claimed."
+}
