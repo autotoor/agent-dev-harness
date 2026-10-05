@@ -1,6 +1,6 @@
 # Review And Conversation Evaluation Plan
 
-Status: agreed direction, 2026-10-04. No automated trial has run. No skill is packaged.
+Status: agreed direction, 2026-10-04. Evaluations [001](./evaluations/001/run-record.md) and [002](./evaluations/002/run-record.md) have each completed two small read-only subagent runs; interactive replay is still pending. No skill is packaged. Evaluation 002 exposes a candidate prompt improvement that remains untested.
 
 ## Goal
 
